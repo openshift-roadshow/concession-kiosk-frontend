@@ -1,27 +1,30 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Concession Kiosk - Thank You!</title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-  </head>
-  <body>
-    <h1>Concession Kiosk - Thank You</h1>
-    <div>
-      <p>
-        Your order number is: <% if (ticketNumber) { %>
-        <%= ticketNumber %> 
-        <% } %>
-    </p>
-    </div>
-    <div>
-      Your order contains: <% if (order) { %>
-      <p>Hotdogs: <%= order.hotdog %></p>
-      <p>Hamburgers: <%= order.hamburger %></p>
-      <p>Salads: <%= order.salad %></p>
-      <p>Pizzas: <%= order.pizza %></p>
-      <p>Sodas: <%= order.soda %></p>  
-      <% } %>  
-    </div>
-
-  </body>
+    <head>
+        <title>Concession Kiosk - Thank You!</title>
+        <link rel='stylesheet' href='stylesheets/style.css' />
+        <link rel='stylesheet' href='stylesheets/normalize.css' />
+    </head>
+    <body>
+        <h1>Concession Kiosk - Thank You!</h1>
+        <div class="wrapper">
+            <div class="summary">
+            <p>
+                Your order number is: <% if (ticketNumber) { %>
+                <b><%= ticketNumber %></b>
+                <% } %>
+            </p>
+            </div>
+            <div class="summary">
+            Order Summary: <% if (order) { %>
+                <table class="order">
+                    <tr><td>Hotdogs:</td><td><%= order.hotdog %></td></tr>
+                    <tr><td>Hamburgers:</td><td><%= order.hamburger %></td></tr>
+                    <tr><td>Salads:</td><td><%= order.salad %></td></tr>
+                    <tr><td>Pizzas:</td><td><%= order.pizza %></td></tr>
+                    <tr><td>Sodas:</td><td><%= order.soda %></td></tr>
+            <% } %>
+            </div>
+        </div>
+    </body>
 </html>
